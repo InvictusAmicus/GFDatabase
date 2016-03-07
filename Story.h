@@ -1,30 +1,29 @@
-#ifndef _STORY_H_
-#define _STORY_H_
+#ifndef __STORY_H__
+#define __STORY_H__
 
-#include "NewSinglePlayGame.h"
 #include "cocos2d.h"
 
 class Story : public cocos2d::Layer
 {
+private:
+
 public:
+	/*!
+	*Creates the scene for the GameWonScreen
+	*/
 	static cocos2d::Scene* createScene();
 
+	/*!
+	*Called to initialize the scene
+	*/
 	virtual bool init();
 
-	virtual void toGame(cocos2d::Ref*);
-	// a selector callback
-
 	/*!
-	*Retrieves the values from the system file and sets the values in Options
+	*Returns the user to the Main Menu
 	*/
-	void SystemFile();
-
-	/*!
-	*Sets the volume of the background music
-	*/
-	void PlayMusic();
+	void returnToTitleScreen(cocos2d::Ref* pSender);
 
 	CREATE_FUNC(Story);
-}
+};
 
-#endif
+#endif // __STORY_H__
